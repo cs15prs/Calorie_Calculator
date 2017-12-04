@@ -6,4 +6,10 @@
     android:layout_height="match_parent"
     tools:context="com.caloriecalculator.calorie_calculator.MainActivity">
 
+    <WebView
+        android:id="@+id/webview1"
+        android:layout_width="383dp"
+        android:layout_height="510dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="3dp" />
 </android.support.constraint.ConstraintLayout>

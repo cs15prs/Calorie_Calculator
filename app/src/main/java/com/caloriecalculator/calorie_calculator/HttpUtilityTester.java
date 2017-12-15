@@ -69,20 +69,19 @@ public class HttpUtilityTester extends AppCompatActivity {
             try {
 
                 final TextView outputView = (TextView) findViewById(R.id.showOutput);
-                URL url = new URL("https://www.verywell.com/recipe-nutrition-analyzer-4129594");
+                URL url = new URL("http://requestb.in/1cs29cy1");
 
                 HttpURLConnection connection = (HttpURLConnection)url.openConnection();
-                String urlParameters = "parameter=value&also=another";
-                connection.setDoOutput(true);
+                String urlParameters = "fizz=buzz";
                 connection.setRequestMethod("POST");
                 connection.setRequestProperty("USER-AGENT", "Mozilla/5.0");
-                // connection.setRequestProperty("ACCEPT-LANGUAGE", "en-US,en;0.5");
+                connection.setRequestProperty("ACCEPT-LANGUAGE", "en-US,en;0.5");
                 connection.setDoOutput(true);
                 DataOutputStream dStream = new DataOutputStream(connection.getOutputStream());
                 dStream.writeBytes(urlParameters);
                 dStream.flush();
                 dStream.close();
-                int responseCode = 443;
+                int responseCode = connection.getResponseCode();
 
                 System.out.println("\nSending 'POST' request to URL : " + url);
                 System.out.println("Post parameters : " + urlParameters);
@@ -99,6 +98,7 @@ public class HttpUtilityTester extends AppCompatActivity {
                 while((line = br.readLine()) != null ) {
                     responseOutput.append(line);
                 }
+
                 br.close();
 
                 output.append(System.getProperty("line.separator") + "Response " + System.getProperty("line.separator") + System.getProperty("line.separator") + responseOutput.toString());

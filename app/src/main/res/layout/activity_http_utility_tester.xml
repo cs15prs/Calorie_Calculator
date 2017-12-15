@@ -17,5 +17,33 @@
         android:layout_height="match_parent"
         android:background="@android:color/background_light">
 
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="55dp"
+            android:ems="10"
+            android:hint="Please Enter Recipe"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="59dp"
+            android:text="Send Request" />
+
+        <TextView
+            android:id="@+id/showOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="49dp"
+            android:hint="Output" />
     </RelativeLayout>
 </FrameLayout>

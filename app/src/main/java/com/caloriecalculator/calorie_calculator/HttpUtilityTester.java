@@ -1,6 +1,7 @@
 package com.caloriecalculator.calorie_calculator;
 
 import android.annotation.SuppressLint;
+import android.net.Uri;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Set;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -69,10 +71,12 @@ public class HttpUtilityTester extends AppCompatActivity {
             try {
 
                 final TextView outputView = (TextView) findViewById(R.id.showOutput);
-                URL url = new URL("http://requestb.in/1cs29cy1");
+                final TextView textView = (TextView) findViewById(R.id.textView);
+                URL url = new URL("https://www.verywell.com/recipe-nutrition-analyzer-4129594");
+                Uri uri = Uri.parse("https://www.verywell.com/recipe-nutrition-analyzer-4129594/");
 
                 HttpURLConnection connection = (HttpURLConnection)url.openConnection();
-                String urlParameters = "fizz=buzz";
+                String urlParameters = "search?recipeString=1/8 teaspoon cinnamon";
                 connection.setRequestMethod("POST");
                 connection.setRequestProperty("USER-AGENT", "Mozilla/5.0");
                 connection.setRequestProperty("ACCEPT-LANGUAGE", "en-US,en;0.5");

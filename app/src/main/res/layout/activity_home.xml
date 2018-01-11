@@ -24,8 +24,10 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:clickable="false"
+            android:onClick="onClink"
             android:singleLine="false"
             android:text="Try a Sample Recipe"
+            android:textColor="@android:color/background_light"
             android:textIsSelectable="true" />
 
         <ImageView
@@ -70,5 +72,67 @@
             android:keepScreenOn="true"
             android:keyboardNavigationCluster="false"
             android:textAlignment="textStart" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:scaleType="fitXY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/editText3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            app:srcCompat="@drawable/upper0" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="86dp"
+            android:text="0"
+            android:textColor="@android:color/background_light"
+            android:textSize="100sp" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:text="       " />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/editText3"
+            app:srcCompat="@drawable/result1" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="24dp"
+            android:text="More Details"
+            android:textColor="@android:color/background_light" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:onClick="sendPostRequest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView7"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/textView3"
+            android:text="                    " />
+
     </RelativeLayout>
 </FrameLayout>

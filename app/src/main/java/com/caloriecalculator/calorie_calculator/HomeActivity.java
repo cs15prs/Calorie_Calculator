@@ -2,14 +2,16 @@ package com.caloriecalculator.calorie_calculator;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import java.util.Scanner;
-public class HomeActivity extends AppCompatActivity
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener
 {
     static EditText et;
     TextView t1;
@@ -21,14 +23,27 @@ public class HomeActivity extends AppCompatActivity
         setContentView(R.layout.activity_home);
         et=(EditText)findViewById(R.id.editText3);
         t1=(TextView)findViewById(R.id.textView6);
+        final Button button = findViewById(R.id.button);
     }
-    public void sendPostRequest(View View) {
+    public void onClink1(View view) {
+        Intent intent = new Intent(HomeActivity.this, OcrstartActivity.class);
+        startActivity(intent);
+    }
+        public void sendPostRequest(View View) {
         new HomeActivity.PostClass(this).execute();
     }
     public void onClink(View view)
     {
         et.setText("Potato Raw");
     }
+
+    @Override
+    public void onClick(View view) {
+        Intent intent = new Intent(HomeActivity.this, OcrstartActivity.class);
+        startActivity(intent);
+
+    }
+
     private class PostClass extends AsyncTask<String, Void, Void> {
 
         private final Context context;

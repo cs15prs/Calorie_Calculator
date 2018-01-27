@@ -20,6 +20,23 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity
+            android:name=".HttpUtilityTester"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_http_utility_tester"
+            android:theme="@style/FullscreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.verywell.com"
+                    android:path="/recipe-nutrition-analyzer-4129594"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".HomeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_home"

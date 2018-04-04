@@ -1,46 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.caloriecalculator.calorie_calculator">
+    package="com.google.android.gms.samples.vision.ocrreader"
+    android:installLocation="auto">
+
+    <uses-feature android:name="android.hardware.camera" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:fullBackupContent="false"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/icon"
         android:label="Calorie Calculator"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".SplashActivity">
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="ocr" />
+
+        <activity
+            android:name=".SplashActivity"
+            android:label="Calorie Calculator">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".OcrCaptureActivity"
+            android:label="Read Text" />
         <activity android:name=".MainActivity" />
-        <activity
-            android:name=".HttpUtilityTester"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_http_utility_tester"
-            android:theme="@style/FullscreenTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data
-                    android:host="www.verywell.com"
-                    android:path="/recipe-nutrition-analyzer-4129594"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".HomeActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_home"
-            android:theme="@style/FullscreenTheme"></activity>
+        <activity android:name=".CaloriesActivity"></activity>
     </application>
 
 </manifest>
